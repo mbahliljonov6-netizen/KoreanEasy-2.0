@@ -38,7 +38,7 @@ Rules: exactly 5 vocabulary items and exactly 3 quiz questions. Quiz options mus
       headers: { "Content-Type": "application/json", "x-goog-api-key": key },
       body: JSON.stringify({
         contents: [{ parts: [{ text: prompt }] }],
-        generationConfig: { responseMimeType: "application/json", temperature: 0.2 }
+        generationConfig: { responseMimeType: "application/json", temperature: 0.2, thinkingConfig: { thinkingLevel: "low" } 
       })
     });
     const data = await response.json().catch(() => ({}));
