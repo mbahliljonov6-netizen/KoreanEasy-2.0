@@ -31,7 +31,7 @@ Return ONLY valid JSON with this exact structure:
 Rules: exactly 5 vocabulary items and exactly 3 quiz questions. Quiz options must be distinct and only one correct answer. Questions and explanations must be in ${outputLanguage}. Keep Korean terms in Korean. If the source is not a Korean notice/message or does not contain enough information for a field, do not fabricate content. Source text:
 """${text}"""`;
   }
-  const model = process.env.GEMINI_MODEL || "gemini-2.0-flash";
+  const model = process.env.GEMINI_MODEL || "gemini-3.7-flash";
   try {
     const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`, {
       method: "POST",
